@@ -1,0 +1,35 @@
+.topbar {
+  height: 64px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 18px 0 0 0;
+}
+.topbar .search input {
+  width: 320px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6ecff;
+  background: #fff;
+  @media (max-width: 900px) {
+    width: 200px;
+  }
+}
+.topbar .actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #cbdcff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}

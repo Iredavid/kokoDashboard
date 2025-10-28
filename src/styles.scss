@@ -1,1 +1,93 @@
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css');
+//  Simple plain-CSS dashboard theme inspired by Jobie - easy to read and edit */
+
+:root{
+    --bg:#f5f7fb;
+    --panel:#ffffff;
+    --accent:#2b6ef6;
+    --muted:#7a7f86;
+    --success:#28a745;
+    --danger:#e63946;
+    --shadow: 0 6px 18px rgba(38,43,66,0.06);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:#222;font-family:inherit;font-size:14px}
+  .brand{display:flex;gap:12px;align-items:center}
+  .logo{width:44px;height:44px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .title{font-weight:700;text-transform:uppercase;letter-spacing:0.6px}
+//   .nav{display:flex;flex-direction:column;gap:6px}
+//   .nav a{padding:10px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+//   .nav a.active, .nav a:hover{background:#eff5ff;color:var(--accent);font-weight:600}
+  
+  .sidebar-footer{margin-top:auto;padding-top:12px;border-top:1px solid #f0f3f7}
+  .sidebar-footer a{color:var(--muted);text-decoration:none}
+  
+  .topbar{height:64px;background:transparent;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid rgba(0,0,0,0.04)}
+  .topbar .search input{width:320px;padding:10px 12px;border-radius:8px;border:1px solid #e6ecff;background:#fff}
+  .topbar .actions{display:flex;gap:12px;align-items:center}
+  .avatar{width:36px;height:36px;border-radius:50%;background:#cbdcff;display:flex;align-items:center;justify-content:center;font-weight:700}
+  
+  .page-content{padding:20px}
+  
+  .page h1{margin:0 0 14px 0;font-size:20px}
+  
+ 
+  
+
+  
+  .controls{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+  .btn{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+  .btn.small{padding:6px 8px;font-size:13px}
+  .form label{display:block;margin-bottom:8px}
+  .form input,.form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9f0}
+  .login-page{display:flex;align-items:center;justify-content:center;height:calc(100vh - 40px)}
+  .login-card{width:360px;background:var(--panel);padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+  .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .report-card{background:var(--panel);padding:12px;border-radius:10px;box-shadow:var(--shadow)}
+  
+  @media (max-width:900px){
+    .sidebar{display:none}
+    .topbar .search input{width:180px}
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
