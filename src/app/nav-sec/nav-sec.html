@@ -1,11 +1,11 @@
 <aside class="sidebar">
-  <div class="brand">
+  <div class="brand" [class.expanded]="expanded">
     <div class="logo">JD</div>
     <div class="title">KOKO</div>
   </div>
   <nav class="nav">
     <mat-accordion>
-      <mat-expansion-panel>
+      <mat-expansion-panel (opened)="expanded = true" (closed)="expanded = false">
         <mat-expansion-panel-header>
           <mat-panel-title>
             <i class="fi fi-tr-dashboard-panel"></i>
@@ -25,7 +25,7 @@
           <li><a routerLink="" routerLinkActive="active">Deposit & Withdraw</a></li>
           <li><a routerLink="" routerLinkActive="active">Supply & Payment</a></li>
           <li><a routerLink="" routerLinkActive="active">Claims and Payments</a></li>
-          <li><a routerLink="" routerLinkActive="active">User</a></li>
+          <li><a routerLink="/users" routerLinkActive="active">User</a></li>
           <li><a routerLink="" routerLinkActive="active">Permission</a></li>
           <li><a routerLink="" routerLinkActive="active">Global</a></li>
         </ol>

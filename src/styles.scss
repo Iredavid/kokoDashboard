@@ -28,7 +28,7 @@ body {
   // variables at https://material.angular.dev/guide/system-variables
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
+  // font: var(--mat-sys-body-medium);
 
   // Reset the user agent margin.
   margin: 0;
@@ -36,9 +36,11 @@ body {
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css');
 //  Simple plain-CSS dashboard theme inspired by Jobie - easy to read and edit */
 
 :root{
+  --primary:#5dd9d9;
     --bg:#f5f7fb;
     --panel:#ffffff;
     --accent:#2b6ef6;
@@ -50,13 +52,10 @@ body {
   }
   
   *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:#222;font-family:inherit;font-size:14px}
+  body{margin:0;background:var(--bg);color:#222; font-size: 1rem; }
   .brand{display:flex;gap:12px;align-items:center}
   .logo{width:44px;height:44px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
   .title{font-weight:700;text-transform:uppercase;letter-spacing:0.6px}
-//   .nav{display:flex;flex-direction:column;gap:6px}
-//   .nav a{padding:10px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
-//   .nav a.active, .nav a:hover{background:#eff5ff;color:var(--accent);font-weight:600}
   
   .sidebar-footer{margin-top:auto;padding-top:12px;border-top:1px solid #f0f3f7}
   .sidebar-footer a{color:var(--muted);text-decoration:none}
@@ -69,10 +68,6 @@ body {
   .page-content{padding:20px}
   
   .page h1{margin:0 0 14px 0;font-size:20px}
-  
- 
-  
-
   
   .controls{display:flex;gap:12px;align-items:center;margin-bottom:12px}
   .btn{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
@@ -88,6 +83,11 @@ body {
     .sidebar{display:none}
     .topbar .search input{width:180px}
   }
+  .panel{
+    background: var(--panel);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
   
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// html, body { height: 100%; }

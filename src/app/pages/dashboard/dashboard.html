@@ -1,53 +1,184 @@
-<section class="page dashboard">
-  <h1>Dashboard</h1>
+<section class="page-dashboard">
+  <!-- <h1>Dashboard</h1> -->
   <div class="cards">
-    <div class="card">
-        
-      <div class="text">Total Jobs<br /><span class="big">124</span></div>
+    <div class="card first">
+      <div class="icon">
+        <i class="fi fi-ss-user-md"></i>
+      </div>
+      <div class="text">
+        <span class="items">Doctors</span>
+        <span class="big">80</span>
+      </div>
     </div>
-    <div class="card">Active Users<br /><span class="big">58</span></div>
-    <div class="card">Open Positions<br /><span class="big">12</span></div>
-    <div class="card">Open Positions<br /><span class="big">12</span></div>
+    <div class="card second">
+      <div class="icon">
+        <i class="fi fi-ss-patient"></i>
+      </div>
+      <div class="text"><span class="items">Patients </span> <span class="big">24</span></div>
+    </div>
+    <div class="card third">
+      <div class="icon">
+        <i class="fi fi-ss-user-nurse"></i>
+      </div>
+      <div class="text"><span class="items">Nurses </span> <span class="big">12</span></div>
+    </div>
+    <div class="card fourth">
+      <div class="icon">
+        <i class="fi fi-ss-treatment"></i>
+      </div>
+      <div class="text"><span class="items">Records</span> <span class="big">14</span></div>
+    </div>
   </div>
 
   <div class="panels">
-    <div class="panel">
-      <h3>Recent Jobs</h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Job</th>
-            <th>Company</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Frontend Dev</td>
-            <td>Acme</td>
-            <td><span class="pill green">Open</span></td>
-          </tr>
-          <tr>
-            <td>Backend Dev</td>
-            <td>Beta</td>
-            <td><span class="pill">Filled</span></td>
-          </tr>
-          <tr>
-            <td>Designer</td>
-            <td>Gamma</td>
-            <td><span class="pill green">Open</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="panel panelApp">
+      <div class="profileStats">
+        <img
+          class="profile"
+          src="https://img.freepik.com/free-photo/portrait-upset-american-black-person_23-2148749581.jpg"
+          alt="Appointments Overview Chart"
+        />
+        <h3 class="appTitle">Kola Badmus</h3>
+        <p class="appSubtitle">Doctor</p>
+        <div class="stats">
+          <div class="stat">
+            <img
+              class="label"
+              src="https://www.kyoceradocumentsolutions.co.uk/content/dam/kyocera/gb/images/square/square-540x540-kduk-81-msd-4.png"
+              alt=""
+            />
+            <!-- <span class="label">Appointments</span> -->
+            <span class="number">Patients</span>
+          </div>
+          <div class="stat">
+            <img
+              class="label"
+              src="https://www.kyoceradocumentsolutions.co.uk/content/dam/kyocera/gb/images/square/square-540x540-kduk-96-msd-1.png"
+              alt=""
+            />
+            <!-- <span class="label">Patients</span> -->
+            <span class="number">Attendance</span>
+          </div>
+          <div class="stat">
+            <img
+              class="label"
+              src="https://www.kyoceradocumentsolutions.co.uk/content/dam/kyocera/gb/images/square/square-540x540-kduk-94-msd-2.png"
+              alt=""
+            />
+            <!-- <span class="label">Records</span> -->
+            <span class="number">Surgeries</span>
+          </div>
+        </div>
+      </div>
+      <div class="recentAct">
+        <h3 class="sectTitle rectTitle">Recent Activity</h3>
+        <ul class="actList">
+          <li>
+            <div class="actIcon">
+              <i class="fi fi-ss-puzzle-piece"></i>
+            </div>
+            <div class="actText">
+              <p class="activity">Patient John Doe checked in for appointment</p>
+              <p class="time">2 hours ago</p>
+            </div>
+          </li>
+          <li>
+            <div class="actIcon">
+              <i class="fi fi-ss-puzzle-piece"></i>
+            </div>
+            <div class="actText">
+              <p class="activity">New record created for patient Jane Smith</p>
+              <p class="time">1 day ago</p>
+            </div>
+          </li>
+          <li>
+            <div class="actIcon">
+              <i class="fi fi-ss-puzzle-piece"></i>
+            </div>
+            <div class="actText">
+              <p class="activity">Nurse Anna Lee administered medication to patient Mike Brown</p>
+              <p class="time">5 hours ago</p>
+            </div>
+          </li>
+          <li>
+            <div class="actIcon">
+              <i class="fi fi-ss-puzzle-piece"></i>
+            </div>
+            <div class="actText">
+              <p class="activity">Doctor Kola Badmus completed surgery on patient Sarah Wilson</p>
+              <p class="time">3 days ago</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="panel">
-      <h3>Simple Activity</h3>
-      <ul class="activity">
-        <li>New user signed up — <small>2h ago</small></li>
-        <li>Job "Designer" was published — <small>6h ago</small></li>
-        <li>User "John" applied to Frontend — <small>1d ago</small></li>
-      </ul>
+    <div class="panelRight">
+      <div class="panel panelGraph">
+        <h3 class="sectTitle">Activity</h3>
+        <img src="https://i.ibb.co/3Y85LZPC/download-2.png" alt="" />
+      </div>
+
+      <div class="messageSection">
+        <h3 class="sectTitle mesTitle">
+          Messages
+        </h3>
+        <div class="messages">
+          <div class="panel card">
+          </div>
+          <div class="panel card">
+          </div>
+        </div>
+      </div>
+      <!-- <div class="panel panelTasks">
+        <h3>To-Do List</h3>
+        <ul class="taskList">
+          <li>
+            <input type="checkbox" id="task1" />
+            <label for="task1">Review patient records</label>
+          </li>
+          <li>
+            <input type="checkbox" id="task2" />
+            <label for="task2">Schedule follow-up appointments</label>
+          </li>
+          <li>
+            <input type="checkbox" id="task3" />
+            <label for="task3">Update treatment plans</label>
+          </li>
+          <li>
+            <input type="checkbox" id="task4" />
+            <label for="task4">Coordinate with nursing staff</label>
+          </li>
+        </ul>
+      </div> -->
     </div>
+  </div>
+
+  <div class="featureSec">
+    <h3 class="featureTitle sectTitle">Featured Section</h3>
+    <div class="cards">
+    <div class="card">
+      <div class="icon">
+        <i class="fi fi-ss-newspaper"></i>
+      </div>
+      <div class="text">
+        <span class="items">Pending Prescriptions</span>
+        <span class="big">80</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <i class="fi fi-ss-patient"></i>
+      </div>
+      <div class="text"><span class="items">Patients </span> <span class="big">24</span></div>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <i class="fi fi-ss-user-nurse"></i>
+      </div>
+      <div class="text"><span class="items">Nurses </span> <span class="big">12</span></div>
+    </div>
+
+  </div>
   </div>
 </section>

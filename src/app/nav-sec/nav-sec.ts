@@ -8,5 +8,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
   styleUrl: './nav-sec.scss',
 })
 export class NavSec {
+  expanded = false;
 
 }

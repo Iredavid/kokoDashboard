@@ -4,34 +4,42 @@
   height: 100vh;
   min-width: 300px;
   background: #5dd9d9;
-  padding: 18px 0 18px 0;
+  padding: 0px 0 18px 0;
   display: flex;
   flex-direction: column;
   gap: 18px;
   overflow-y: auto;
-  @media (max-width: 900px) {
-    display: none;
-  }
+  // @media (max-width: 900px) {
+  //   display: none;
+  // }
 }
-ol{
+ol {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   // padding: 0;
-  margin: 0;
+  margin: 1rem 0 0;
 }
 .brand {
+  // background: #5dd9d9;
   display: flex;
   gap: 12px;
   align-items: center;
   padding: 1rem 2rem;
+  // width: 90%;
+  // min-width: 320px;
 }
+// .brand.expanded {
+//   border-radius: 0 0 55px 0;
+//   transition: border-radius 0.3s ease;
+// }
+
 .logo {
   width: 44px;
   height: 44px;
   border-radius: 8px;
-  background: var(--accent);
+  background: #63e6e6;
   color: #fff;
   display: flex;
   align-items: center;
@@ -50,20 +58,13 @@ ol{
   gap: 6px;
   width: 90%;
   min-width: 300px;
+  padding-left: 12px;
+  background: #5dd9d9;
+
 }
 .nav a {
-  // position: relative;
-  // //   position: absolute;
-  // font-size: 1rem;
-  // padding: 1.2rem 2rem;
-  // border-top-left-radius: 1.5rem;
-  // border-top-right-radius: 0;
-  // border-bottom-right-radius: 0;
-  // border-bottom-left-radius: 1.5rem;
   color: #ffffffd9;
   text-decoration: none;
-  // z-index: 1;
-  //   overflow: hidden;
 
   // &::before {
   //   content: '';
@@ -78,9 +79,11 @@ ol{
   //   z-index: 999;
   // }
 }
+// .active{
 
+// }
 // .nav a.active,
-// .nav a:hover {
+//  {
 //   background: var(--bg);
 //   color: var(--accent);
 //   font-weight: 600;
@@ -91,6 +94,32 @@ ol{
   }
 }
 
+.mat-expansion-panel-header.mat-expanded {
+  background-color: white !important;
+  border-radius: 18px 0px 0px 18px;
+  height: 56px;
+  .mat-expansion-panel-header-description {
+    color: black !important;
+  }
+  .mat-expansion-panel-header-title {
+    i {
+      color: #5dd9d9 !important;
+    }
+  }
+  ::ng-deep .mat-expansion-indicator {
+    svg {
+      fill: black !important;
+    }
+  }
+  ::ng-deep mat-accordion .mat-expansion-panel-header {
+    border-radius: 20px; /* smooth curves */
+  
+  }
+
+}
+.mat-expansion-panel-spacing {
+  margin: 0 !important;
+}
 .sidebar-footer {
   margin-top: auto;
   padding-top: 12px;
@@ -100,28 +129,59 @@ ol{
   color: var(--muted);
   text-decoration: none;
 }
+mat-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 mat-expansion-panel {
   background: transparent;
-  color: #fff !important;
   box-shadow: none !important;
-  border-radius: 0;
-  border: none;
-  .mat-expansion-panel-header-description {
-    color: #ffffffd9 !important;
-    font-size: 1rem !important;
-  }
-  .mat-expansion-indicator{
-    color: #fff !important;
-  }
-  .mat-expansion-panel-header{
-    padding: 1.8rem 2rem !important;
-  }
-  .mat-expansion-panel-header-title{
-    flex-grow: 0 !important;
-    i{
-      font-size: 2rem;
-      color: #fff;
-    }
-  }
+  border-radius: 0 !important;
 
+}
+.mat-expansion-panel-header-description {
+  color: #ffffffd9;
+  font-size: 1rem !important;
+}
+.mat-expansion-panel-header {
+  padding: 1.8rem 2rem !important;
+  border-radius: 1rem 0 0 1rem;
+  // &::after {
+  //   // display: none !important;
+  //   content:'';
+  //   position: absolute;
+  //   background-color: #5dd9d9;
+  //   width:50px;
+  //   height:100%;
+  //   bottom:-58px;
+  //   border-top-right-radius:50% ;
+  //   right: -15px;
+  //   // z-index: 999;
+  //   // margin-left: -1px;
+  // }
+}
+.mat-expansion-panel-header-title {
+  flex-grow: 0 !important;
+  i {
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+.mat-accordion .mat-expansion-panel:first-of-type {
+  border-radius: 0 !important;
+}
+.mat-accordion .mat-expansion-panel:last-of-type {
+  border-radius: 0 !important;
+}
+::ng-deep .mat-expansion-indicator {
+  svg {
+    fill: white !important;
+  }
+}
+::ng-deep mat-accordion .mat-expansion-panel-content {
+  background: #5dd9d9;
+  border-radius: 20px 20px 20px 20px; /* only bottom corners */
+  // padding: 8px 20px;
 }
