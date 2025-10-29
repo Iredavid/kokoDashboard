@@ -1,16 +1,24 @@
 
+@use '@angular/material' as mat;
+@use '../_theme-colors.scss' as colors;
+
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css');
+//  Simple plain-CSS dashboard theme inspired by Jobie - easy to read and edit */
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
-@use '@angular/material' as mat;
-
+ 
 html {
   @include mat.theme((
     color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
+      primary: colors.$primary-palette,
+      tertiary: colors.$tertiary-palette,
     ),
     typography: Roboto,
     density: 0,
@@ -33,13 +41,13 @@ body {
   // Reset the user agent margin.
   margin: 0;
 }
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-thin-rounded/css/uicons-thin-rounded.css');
-@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-straight/css/uicons-solid-straight.css');
-//  Simple plain-CSS dashboard theme inspired by Jobie - easy to read and edit */
+
+
+
 
 :root{
+  --l: #8EF0F0
+  --primary-dark:#5ce4e5;
   --primary:#5dd9d9;
     --bg:#f5f7fb;
     --panel:#ffffff;
