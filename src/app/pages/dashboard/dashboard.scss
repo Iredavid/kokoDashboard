@@ -10,7 +10,7 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   @media(max-width:1280px){
-    // grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 }
 .card {
@@ -93,12 +93,25 @@
   display: flex;
   justify-content: space-evenly;
   gap: 1.5rem;
+  @media(max-width:1280px){
+    flex-direction: column;
+  }
+}
+.panel{
+  display: flex;
+  flex-direction: column;
 }
 .panelApp{
   flex: 1 1 0;
   max-width: 530px;
   padding: 0;
   height: fit-content;
+  @media(max-width:1280px){
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+  }
+
 }
 .profileStats{
   display: flex;
@@ -106,6 +119,14 @@
   align-items: center;
   padding: 2rem;
   border-bottom: 1px solid #f1f3f6;
+  @media(max-width:1280px){
+    border-bottom: 0;
+    border-right: 1px solid #f1f3f6;
+    justify-content: center;
+  }
+  @media(max-width:1180px){
+    padding: 1rem;
+  }
 }
 .recentAct{
   padding: 2rem;
@@ -144,7 +165,7 @@
 }
 
 .panelRight{
-  flex: 1 1 500px; 
+  flex: 1 0 500px; 
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -186,15 +207,20 @@
   color: var(--success);
 }
 .activity {
-  // list-style: none;
-  // padding-left: 0;
   font-size: 1rem;
   word-wrap: break-word;
   margin: 0;
+  @media(max-width:1180px){
+    font-size: 14px;
+  }
+    
 }
 .time{
   margin-top: 0.5rem;
   color: var(--muted);
+  @media(max-width:1180px){
+    font-size: 14px;
+  }
 }
 .activity li {
   padding: 6px 0;

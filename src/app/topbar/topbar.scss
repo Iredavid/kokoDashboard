@@ -1,12 +1,15 @@
 .topbar {
   height: 64px;
-  background: transparent;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   border-radius: 18px 0 0 0;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
 }
 .topbar .search input {
   width: 320px;
