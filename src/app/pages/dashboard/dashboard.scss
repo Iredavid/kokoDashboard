@@ -7,9 +7,9 @@
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
-  @media(max-width:1280px){
+  @media(max-width:1200px){
     grid-template-columns: 1fr 1fr;
 }
 }
@@ -40,6 +40,11 @@
   height: 60px;
   border-radius: 1rem;
   border: 1px solid #e1e4eb;
+  @media(max-width:1400px){
+    width:50px;
+    height:50px;
+  }
+
   i {
     font-size: 2.5rem;
     height: 100%;
@@ -49,10 +54,6 @@
     justify-content: center;
     @media(max-width:1400px){
       font-size:2rem;
-      .icon{
-        width:50px;
-        height:50px;
-      }
     }
   }
 }
@@ -88,6 +89,9 @@
  @media(max-width:1400px){
   font-size:2rem;
  } 
+ @media(max-width: 1200px) {
+  font-size:1.8rem ;
+ }
 }
 .panels {
   display: flex;

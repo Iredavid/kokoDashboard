@@ -5,184 +5,38 @@
   </div>
   <nav class="nav">
     <mat-accordion>
-      <div class="list">
-        <mat-expansion-panel (opened)="expanded = true" (closed)="expanded = false">          
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-dashboard-panel"></i>
-            </mat-panel-title>
-            <mat-panel-description> Dashboard </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="" routerLinkActive="active">Clocking</a></li>
-            <li><a routerLink="" routerLinkActive="active">Manage Patient</a></li>
-            <li><a routerLink="" routerLinkActive="active">Visit Queue</a></li>
-            <li><a routerLink="" routerLinkActive="active">Vitals</a></li>
-            <li><a routerLink="" routerLinkActive="active">Doctor</a></li>
-            <li><a routerLink="" routerLinkActive="active">Laboratory</a></li>
-            <li><a routerLink="" routerLinkActive="active">Dispense Drug</a></li>
-            <li><a routerLink="" routerLinkActive="active">Radiology</a></li>
-            <li><a routerLink="" routerLinkActive="active">Admitted Patients</a></li>
-            <li><a routerLink="" routerLinkActive="active">Deposit & Withdraw</a></li>
-            <li><a routerLink="" routerLinkActive="active">Supply & Payment</a></li>
-            <li><a routerLink="" routerLinkActive="active">Claims and Payments</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">User</a></li>
-            <li><a routerLink="" routerLinkActive="active">Permission</a></li>
-            <li><a routerLink="" routerLinkActive="active">Global</a></li>
-          </ol>
-          <!-- <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a> -->
-        </mat-expansion-panel>
-        </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-desk"></i>
-            </mat-panel-title>
-            <mat-panel-description> Front Desk </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/jobs" routerLinkActive="active">Patients</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Appointments</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Visit</a></li>
-            <!-- <li><a routerLink="/jobs" routerLinkActive="active">Patient Check-In</a></li> -->
-          </ol>
-          <!-- <a routerLink="/jobs" routerLinkActive="active">Jobs</a> -->
+      @for(menuItems of menus; track menuItems){
+      <div [class]="activeIndex === $index ? 'list' : ''">
+        <mat-expansion-panel (opened)="onOpen($index)" (closed)="onClose($index)">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <i [class]="menuItems.icon"></i>
+          </mat-panel-title>
+          <mat-panel-description>{{menuItems.title}}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <ol>
+          @for(itemList of menuItems.items; track itemList){
+          <li><a [routerLink]="itemList.route" routerLinkActive="active">{{itemList.label}}</a></li>
+          }
+          <!-- <li><a routerLink="" routerLinkActive="active">Manage Patient</a></li>
+          <li><a routerLink="" routerLinkActive="active">Visit Queue</a></li>
+          <li><a routerLink="" routerLinkActive="active">Vitals</a></li>
+          <li><a routerLink="" routerLinkActive="active">Doctor</a></li>
+          <li><a routerLink="" routerLinkActive="active">Laboratory</a></li>
+          <li><a routerLink="" routerLinkActive="active">Dispense Drug</a></li>
+          <li><a routerLink="" routerLinkActive="active">Radiology</a></li>
+          <li><a routerLink="" routerLinkActive="active">Admitted Patients</a></li>
+          <li><a routerLink="" routerLinkActive="active">Deposit & Withdraw</a></li>
+          <li><a routerLink="" routerLinkActive="active">Supply & Payment</a></li>
+          <li><a routerLink="" routerLinkActive="active">Claims and Payments</a></li>
+          <li><a routerLink="/users" routerLinkActive="active">User</a></li>
+          <li><a routerLink="" routerLinkActive="active">Permission</a></li>
+          <li><a routerLink="" routerLinkActive="active">Global</a></li> -->
+        </ol>
+        <!-- <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a> -->
         </mat-expansion-panel>
       </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-syringe-injection-blood"></i>
-            </mat-panel-title>
-            <mat-panel-description> Services </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/users" routerLinkActive="active">Consultation</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Procedure / Service</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Surgery</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">In Patients</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Immunization</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Medical Laboratory</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Radiology</a></li>
-          </ol>
-          <!-- <a routerLink="/users" routerLinkActive="active">Users</a> -->
-        </mat-expansion-panel>
-      </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-seller-store"></i>
-            </mat-panel-title>
-            <mat-panel-description> Stores & Pharmacy </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/users" routerLinkActive="active">Pharmacy</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Store Management</a></li>
-          </ol>
-          <!-- <a routerLink="/reports" routerLinkActive="active">Reports</a> -->
-        </mat-expansion-panel>
-      </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-document-paid"></i>
-            </mat-panel-title>
-            <mat-panel-description> Account & Billing </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/users" routerLinkActive="active">Transactions</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Posting Ledger</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">General Ledger Setup</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Scheme Scale Setup</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Utilities</a></li>
-          </ol>
-          <!-- <a routerLink="/profile" routerLinkActive="active">Profile</a> -->
-        </mat-expansion-panel>
-      </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-financial-health"></i>
-            </mat-panel-title>
-            <mat-panel-description> HMO </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/users" routerLinkActive="active">Add HMO</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Manage HMO</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">HMO Summary By Visit Invoice</a></li>
-          </ol>
-          <!-- <a routerLink="/settings" routerLinkActive="active">Settings</a> -->
-        </mat-expansion-panel>
-      </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-desk"></i>
-            </mat-panel-title>
-            <mat-panel-description> Admin </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/users" routerLinkActive="active">HR/Staff</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">User Security</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Organization</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Global Item</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Examination</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Diagnosis</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Template</a></li>
-          </ol>
-          <!-- <a routerLink="/settings" routerLinkActive="active">Settings</a> -->
-        </mat-expansion-panel>
-      </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-desk"></i>
-            </mat-panel-title>
-            <mat-panel-description> Reports </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/users" routerLinkActive="active">Laboratory</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Radiology</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Pharmacy</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Consultation</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Admission</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Appointments</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Patient Registration</a></li>
-          </ol>
-          <!-- <a routerLink="/settings" routerLinkActive="active">Settings</a> -->
-        </mat-expansion-panel>
-      </div>
-      <div class="list">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <i class="fi fi-tr-desk"></i>
-            </mat-panel-title>
-            <mat-panel-description> Analytic Report </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ol>
-            <li><a routerLink="/users" routerLinkActive="active">Patient</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Doctor</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Visitation</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Surgery</a></li>
-            <li><a routerLink="/users" routerLinkActive="active">Vendor/Inventory</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Billing</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Laboratory/Store/Radiology</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Clinical Report</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Extend Clinical Report </a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Audit</a></li>
-            <li><a routerLink="/jobs" routerLinkActive="active">Staff</a></li>
-          </ol>
-          <!-- <a routerLink="/settings" routerLinkActive="active">Settings</a> -->
-        </mat-expansion-panel>
-      </div>
+    }
     </mat-accordion>
     <div class="sidebar-footer">
       <a routerLink="/login">Sign out</a>
