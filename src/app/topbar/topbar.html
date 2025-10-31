@@ -1,8 +1,24 @@
 <header class="topbar">
+  <div class="firstSec">
+    <div class="menuIcon">
+      <i class="fi fi-sr-bars-staggered"></i>
+    </div>
+    <div class="title">
+      <h3>Dashboard</h3>
+    </div>
+  </div>
+  <div class="secondSec">
     <div class="search">
       <input placeholder="Search..." [(ngModel)]="q">
     </div>
     <div class="actions">
+      <div class="actionIcon messages">
+        <i matBadge="15" class="fi fi-ss-comment"></i>
+      </div>
+      <div class="actionIcon notifications">
+        <i matBadge="15" class="fi fi-sr-bell"></i>
+      </div>
       <div class="avatar">A</div>
     </div>
-  </header>
+  </div>
+</header>
