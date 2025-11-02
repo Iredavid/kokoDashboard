@@ -1,6 +1,7 @@
 import {MatBadgeModule} from '@angular/material/badge';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ResponsiveMenu } from '../services/responsive-menu';
 
 @Component({
   selector: 'app-topbar',
@@ -9,5 +10,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './topbar.scss',
 })
 export class Topbar {
+  responsiveMenuService = inject(ResponsiveMenu);
   q = '';
+  expanded = true;
+
+  expandMenu(){
+    this.expanded = !this.expanded;
+    this.responsiveMenuService.dataSource.next(this.expanded);
+  }
+  // collapseMenu(){
+  //   this.responsiveMenuService.dataSource.next(false);
+  // }
 }

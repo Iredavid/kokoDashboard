@@ -9,53 +9,102 @@
   position: absolute;
   z-index: 999;
   width: 100%;
-}
-.firstSec{
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.menuIcon{
-  cursor: pointer;
-  i{
-    font-size: 2rem;
+  @media(max-width: 480px) {
+    padding: 0.6rem 0.5rem;
   }
 }
-.secondSec{
+
+.firstSec {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
-.title{
-  h3{
+.menuBrand{
+  display: none;
+  @media(max-width: 480px) {
+    display: block;
+  }
+}
+.logoMobile {
+  display: flex;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  font-size: 2rem;
+  font-weight: bold;
+  background: #63e6e6;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  // @media(max-width: 480px) {
+  // }
+}
+.menuIcon {
+  cursor: pointer;
+
+  i {
+    font-size: 2rem;
+  }
+
+  @media(max-width: 1024px) {
+    display: none;
+  }
+  @media(max-width: 480px) {
+    display: block;
+  }
+
+}
+
+.secondSec {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title {
+  h3 {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
   }
+
+  @media(max-width: 785px) {
+    display: none;
+  }
 }
+
 .topbar .search input {
-  // width: 320px;
+  flex: 1 1 300px; // allow input to expand
+  min-width: 0;
   padding: 10px 12px;
   border-radius: 1rem;
   border: 1px solid #e6ecff;
   background: var(--mat-sys-inverse-on-surface);
-  &:focus-visible{
+  // flex-shrink: 1;
+
+  &:focus-visible {
     outline: none;
   }
- 
-  @media (max-width: 900px) {
-    width: 200px;
+
+  // @media (max-width: 900px) {
+  //   width: 200px;
+  // }
+}
+
+.search {
+  flex: 1; // allow the whole search section to stretch
+  display: flex;
+  @media(max-width: 540px) {
+    display: none;
   }
 }
-.search{
-  flex-shrink: 2;
-  min-width: 0;
-}
+
 .topbar .actions {
   display: flex;
   gap: 1.5rem;
   align-items: center;
 }
+
 .avatar {
   width: 36px;
   height: 36px;
@@ -67,7 +116,7 @@
   font-weight: 700;
 }
 
-.actionIcon{
+.actionIcon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +125,8 @@
   width: 40px;
   border-radius: 50%;
   background: #fff;
-  i{
+
+  i {
     font-size: 1.2rem;
   }
 }

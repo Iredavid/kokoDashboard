@@ -1,17 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
+import { ResponsiveMenu } from '../services/responsive-menu';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-nav-sec',
-  imports: [RouterModule, MatExpansionModule],
+  imports: [RouterModule, MatExpansionModule,MatMenuModule],
   templateUrl: './nav-sec.html',
   styleUrl: './nav-sec.scss',
 
 })
-export class NavSec {
+export class NavSec implements OnInit, OnDestroy{
+
+
+  responsiveMenuService = inject(ResponsiveMenu);
+  sub = new Subscription 
   activeIndex:number | null = null;
-  expanded = false;
-  
+  expanded = true;
+    ngOnInit(): void {
+      this.sub= this.responsiveMenuService.data$.subscribe((data) => {
+        // if (data.valueOf()) console.log(data);
+        this.expanded = data;
+      });
+  }
   onOpen(index: number) {
     this.activeIndex = index;
   }
@@ -25,7 +37,7 @@ export class NavSec {
       icon: 'fi fi-tr-dashboard-panel',
       title: 'Dashboard',
       items: [
-        {label:'Clocking', route:''},
+        {label:'Clocking', route:'dashboard'},
         {label:'Manage Patient', route:''},
         {label:'Visit Queue', route:''},
         {label:'Vitals', route:''},
@@ -136,5 +148,8 @@ export class NavSec {
       ]
     },
   ];
-  
+
+    ngOnDestroy(): void {
+      this.sub.unsubscribe()
+  }
 }

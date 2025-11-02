@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { ChartConfiguration, ChartData, ChartEvent, ChartOptions, ChartType, DoughnutControllerChartOptions } from 'chart.js';
+import { ChartConfiguration, ChartData, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MatButtonModule, BaseChartDirective],
+  imports: [MatButtonModule, BaseChartDirective, MatTooltipModule,],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
@@ -56,7 +57,6 @@ export class Dashboard {
       },
     },
     scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
       y: {
         position: 'left',
       },
@@ -76,57 +76,38 @@ export class Dashboard {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
   public doughnutChartOptions: ChartOptions<'doughnut'> = {
-    responsive: false,
-    cutout: '80%',
+    responsive: true,
+    cutout: '75%',
     plugins: {
       legend: {
         display: false,
       },
+      tooltip: {
+        enabled: false,
+      },
+
     },
-  };
-
-  public doughnutChartLabels: string[] = [
-    'Download Sales',
-    // 'In-Store Sales',
-    'Mail-Order Sales',
-  ];
-  public doughnutChartData: ChartData<'doughnut'> = {
-    labels: this.doughnutChartLabels,
-    datasets: [
-      { data: [350, 100] },
+    backgroundColor: [
+      'rgb(93, 217, 217)',
+      'rgba(255, 255, 255, 0.1)',
     ],
+    hoverBorderColor: ['rgba(93, 217, 217, 0.2)',
+      'rgba(255, 255, 255, 0.1)',
+    ],
+    hoverBackgroundColor: [
+      'rgba(93, 217, 217,1)',
+      'rgba(255, 255, 255, 0.1)',
+    ]
   };
 
-  // public chartClicked({
-  //   event,
-  //   active,
-  // }: {
-  //   event: ChartEvent;
-  //   active: object[];
-  // }): void {
-  //   console.log(event, active);
-  // }
+  public doughnutChartData: ChartData<'doughnut'> = {
+    labels: ['Download Sales',
+      'Mail-Order Sales',],
+    datasets: [
+      { data: [80, 20] },
+    ],
 
-  // public chartHovered({
-  //   event,
-  //   active,
-  // }: {
-  //   event: ChartEvent;
-  //   active: object[];
-  // }): void {
-  //   console.log(event, active);
-  // }
+  };
+
 }

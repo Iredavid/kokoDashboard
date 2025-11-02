@@ -14,7 +14,14 @@
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
- 
+ html,body{
+  height: auto;
+  width:100%;
+  overflow-y: auto; /* or scroll */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+ }
 html {
   @include mat.theme((
     color: (
@@ -69,7 +76,6 @@ body {
 
   
   .topbar{height:64px;background:transparent;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid rgba(0,0,0,0.04)}
-  .topbar .search input{width:320px;padding:10px 12px;border-radius:8px;border:1px solid #e6ecff;background:#fff}
   .topbar .actions{display:flex;gap:12px;align-items:center}
   .avatar{width:36px;height:36px;border-radius:50%;background:#cbdcff;display:flex;align-items:center;justify-content:center;font-weight:700}
   
@@ -87,10 +93,7 @@ body {
   .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
   .report-card{background:var(--panel);padding:12px;border-radius:10px;box-shadow:var(--shadow)}
   
-  @media (max-width:900px){
-    .sidebar{display:none}
-    .topbar .search input{width:180px}
-  }
+
   .panel{
     background: var(--panel);
     padding: 1rem;

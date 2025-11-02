@@ -33,11 +33,14 @@
   <div class="panels">
     <div class="panel panelApp">
       <div class="profileStats">
-        <canvas baseChart [data]="doughnutChartData" [type]="'doughnut'" [options]="doughnutChartOptions">
-        <img class="profile"
-          src="https://img.freepik.com/free-photo/portrait-upset-american-black-person_23-2148749581.jpg"
-          alt="Appointments Overview Chart" />
-        </canvas>
+        <div class="picStats">
+          <canvas matTooltip="90% Attendance" matTooltipPosition="right" baseChart [data]="doughnutChartData"
+            [type]="'doughnut'" [options]="doughnutChartOptions">
+          </canvas>
+          <img class="profile"
+            src="https://img.freepik.com/free-photo/portrait-upset-american-black-person_23-2148749581.jpg"
+            alt="Appointments Overview Chart" />
+        </div>
         <h3 class="appTitle">Kola Badmus</h3>
         <p class="appSubtitle">Doctor</p>
         <div class="stats">
@@ -137,10 +140,10 @@
               </div>
               <div class="messageBtns">
                 <div class="readMore">
-                  <button matButton="elevated">Basic</button>
+                  <button matButton="elevated">Read More</button>
                 </div>
                 <div class="markAsRead">
-                  <button matButton="tonal">Basic</button>
+                  <button matButton="tonal">Mark as Read</button>
                 </div>
               </div>
             </div>
@@ -163,10 +166,10 @@
               </div>
               <div class="messageBtns">
                 <div class="readMore">
-                  <button matButton="elevated">Basic</button>
+                  <button matButton="elevated">Read More</button>
                 </div>
                 <div class="markAsRead">
-                  <button matButton="tonal">Basic</button>
+                  <button matButton="tonal">Mark as Read</button>
                 </div>
               </div>
             </div>

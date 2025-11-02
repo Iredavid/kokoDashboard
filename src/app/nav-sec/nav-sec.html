@@ -1,45 +1,61 @@
-<aside class="sidebar">
-  <div class="brand" [class.expanded]="expanded">
-    <div class="logo">JD</div>
-    <div class="title">KOKO</div>
-  </div>
-  <nav class="nav">
-    <mat-accordion>
-      @for(menuItems of menus; track menuItems){
-      <div [class]="activeIndex === $index ? 'list' : ''">
-        <mat-expansion-panel (opened)="onOpen($index)" (closed)="onClose($index)">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <i [class]="menuItems.icon"></i>
-          </mat-panel-title>
-          <mat-panel-description>{{menuItems.title}}</mat-panel-description>
-        </mat-expansion-panel-header>
-        <ol>
-          @for(itemList of menuItems.items; track itemList){
-          <li><a [routerLink]="itemList.route" routerLinkActive="active">{{itemList.label}}</a></li>
-          }
-          <!-- <li><a routerLink="" routerLinkActive="active">Manage Patient</a></li>
-          <li><a routerLink="" routerLinkActive="active">Visit Queue</a></li>
-          <li><a routerLink="" routerLinkActive="active">Vitals</a></li>
-          <li><a routerLink="" routerLinkActive="active">Doctor</a></li>
-          <li><a routerLink="" routerLinkActive="active">Laboratory</a></li>
-          <li><a routerLink="" routerLinkActive="active">Dispense Drug</a></li>
-          <li><a routerLink="" routerLinkActive="active">Radiology</a></li>
-          <li><a routerLink="" routerLinkActive="active">Admitted Patients</a></li>
-          <li><a routerLink="" routerLinkActive="active">Deposit & Withdraw</a></li>
-          <li><a routerLink="" routerLinkActive="active">Supply & Payment</a></li>
-          <li><a routerLink="" routerLinkActive="active">Claims and Payments</a></li>
-          <li><a routerLink="/users" routerLinkActive="active">User</a></li>
-          <li><a routerLink="" routerLinkActive="active">Permission</a></li>
-          <li><a routerLink="" routerLinkActive="active">Global</a></li> -->
-        </ol>
-        <!-- <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a> -->
-        </mat-expansion-panel>
-      </div>
-    }
-    </mat-accordion>
-    <div class="sidebar-footer">
-      <a routerLink="/login">Sign out</a>
+<aside class="sidebar" [class.reduced]="expanded===false">
+
+  <div class="mobileMenu" [class.expanded]="expanded===false">
+    <!-- <div class="menuBrand">]> -->
+    <div class="menuBrand">
+      <div class="logoMobile">JD</div>
     </div>
-  </nav>
+    <nav class="mobileNav">
+      <ul class="mobileLists">
+        @for(menuItems of menus; track menuItems){
+        <!-- <a> -->
+
+        <li matButton [matMenuTriggerFor]="menu" class="mobileItems">
+          <i [class]="menuItems.icon"></i>
+        </li>
+        <!-- </a> -->
+        <mat-menu #menu="matMenu" xPosition="after" yPosition="below">
+          @for(itemList of menuItems.items; track itemList){
+
+          <button mat-menu-item [routerLink]="itemList.route" routerLinkActive="active">{{itemList.label}}</button>
+          }
+        </mat-menu>
+        }
+      </ul>
+    </nav>
+  </div>
+
+  @if(expanded){
+  <div class="desktopSidebar">
+    <div class="brand">
+      <div class="logo">JD</div>
+      <div class="title">KOKO</div>
+    </div>
+    <nav class="nav">
+
+      <mat-accordion>
+        @for(menuItems of menus; track menuItems){
+        <div [class]="activeIndex === $index ? 'list' : ''">
+          <mat-expansion-panel (opened)="onOpen($index)" (closed)="onClose($index)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i [class]="menuItems.icon"></i>
+              </mat-panel-title>
+              <mat-panel-description>{{menuItems.title}}</mat-panel-description>
+            </mat-expansion-panel-header>
+            <ol>
+              @for(itemList of menuItems.items; track itemList){
+              <li><a [routerLink]="itemList.route" routerLinkActive="active">{{itemList.label}}</a></li>
+              }
+            </ol>
+          </mat-expansion-panel>
+        </div>
+        }
+      </mat-accordion>
+      <div class="sidebar-footer">
+        <a routerLink="/login">Sign out</a>
+      </div>
+    </nav>
+  </div>
+  }
 </aside>

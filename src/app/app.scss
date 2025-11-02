@@ -4,19 +4,22 @@
   position: relative;
 }
 .main-area {
-  width: calc(100% - 300px);
+  width: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
   height: 100vh;
   background-color: var(--bg);
   border-radius: 38px 0 0 0;
-  @media(max-width: 1200px) {
-    width: calc(100% - 250px);
 
+  @media(max-width: 1024px) {
+    width: calc(100% - 80px);
   }
-
-
+  @media(max-width: 480px) {
+    width: 100%;
+    position: absolute;
+    z-index: 50;
+  }
   &::after{
     content: '';
     position: absolute;
@@ -26,6 +29,10 @@
     height: 40px;
     z-index: 50;
     background: var(--primary); /* same as background behind box */
+    @media(max-width: 480px) {
+      display: none;
+    }
+
   }
 }
 .page-content {

@@ -1,0 +1,38 @@
+[debug] [2025-11-02T18:04:00.210Z] ----------------------------------------------------------------------
+[debug] [2025-11-02T18:04:00.226Z] Command:       /nix/store/ws50yvm6vzlzf7jzz6n7xh4szddrack1-nodejs-20.19.1/bin/node /nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/bin/firebase.js deploy --only hosting:kokodash
+[debug] [2025-11-02T18:04:00.226Z] CLI Version:   14.22.0
+[debug] [2025-11-02T18:04:00.227Z] Platform:      linux
+[debug] [2025-11-02T18:04:00.227Z] Node Version:  v20.19.1
+[debug] [2025-11-02T18:04:00.228Z] Time:          Sun Nov 02 2025 18:04:00 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-02T18:04:00.228Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-02T18:04:00.231Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-11-02T18:04:00.792Z] No OAuth tokens found
+[debug] [2025-11-02T18:04:00.793Z] No OAuth tokens found
+[error] Failed to fetch Firebase Project from current Studio Workspace: Unable to refresh auth: not yet authenticated.
+[debug] [2025-11-02T18:04:00.803Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2025-11-02T18:04:01.074Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-11-02T18:04:01.074Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-11-02T18:04:15.200Z] Running auto auth
+[debug] [2025-11-02T18:04:15.232Z] [iam] checking project telephysician for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-11-02T18:04:15.235Z] No OAuth tokens found
+[debug] [2025-11-02T18:04:15.238Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/telephysician:testIamPermissions [none]
+[debug] [2025-11-02T18:04:15.241Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/telephysician:testIamPermissions x-goog-quota-user=projects/telephysician
+[debug] [2025-11-02T18:04:15.241Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/telephysician:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-02T18:04:15.969Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/telephysician:testIamPermissions 200
+[debug] [2025-11-02T18:04:15.969Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/telephysician:testIamPermissions {}
+[debug] [2025-11-02T18:04:15.971Z] [iam] error while checking permissions, command may fail: Authorization failed. This account is missing the following required permissions on project telephysician:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2025-11-02T18:04:15.972Z] No OAuth tokens found
+[debug] [2025-11-02T18:04:15.973Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/telephysician [none]
+[debug] [2025-11-02T18:04:16.295Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/telephysician 403
+[debug] [2025-11-02T18:04:16.296Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/telephysician {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-11-02T18:04:16.303Z] Request to https://firebase.googleapis.com/v1beta1/projects/telephysician had HTTP Error: 403, The caller does not have permission
+[debug] [2025-11-02T18:04:16.308Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/telephysician had HTTP Error: 403, The caller does not have permission
+    at responseToError (/nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/responseToError.js:53:12)
+    at RetryOperation._fn (/nix/store/f77kilzcw5hh2gidh22k6pj8cp7pxp7h-firebase-tools-14.22.0/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project telephysician. Please make sure the project exists and your account has permission to access it.
